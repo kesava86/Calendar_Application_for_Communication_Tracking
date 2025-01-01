@@ -1,0 +1,96 @@
+/* Calendar Container */
+.calendarContainer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Calendar Header */
+  .calendarHeader {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Calendar Grid */
+  .calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .calendarDay {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .calendarDay:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  /* Event Indicator */
+  .eventIndicator {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  .eventIndicator.overdue {
+    background-color: #ff6347;
+  }
+  
+  .eventIndicator.upcoming {
+    background-color: #ffcc00;
+  }
+  
+  /* Modal for Adding Event */
+  .modalContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .modalHeader {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .modalButton {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modalButton:hover {
+    background-color: #45a049;
+  }
+  

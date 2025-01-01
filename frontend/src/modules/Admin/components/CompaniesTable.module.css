@@ -1,0 +1,188 @@
+/* MethodsTable.module.css */
+
+/* Table container styling */
+.tableContainer {
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Make table scrollable on small screens */
+}
+
+/* Table header styling */
+.tableHeader {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  table-layout: auto; /* Auto layout for better responsiveness */
+}
+
+/* Table header cells */
+.tableHeaderCell {
+  background-color: #2df60a;
+  color: #fff;
+  padding: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Table row styling */
+.tableRow {
+  transition: background-color 0.3s ease;
+}
+
+.tableRow:hover {
+  background-color: #f0f8ff;
+}
+
+/* Table cells */
+.tableCell {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  color: #333;
+  word-wrap: break-word; /* Ensure long text breaks properly */
+}
+
+/* Action button styling */
+.actionButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 8px;
+}
+
+.actionButton:hover {
+  background-color: #0056b3;
+}
+
+.actionButton:active {
+  transform: scale(0.98);
+}
+
+/* Responsive design for smaller screens (tablets and below) */
+@media (max-width: 1024px) {
+  .tableHeader {
+    font-size: 24px;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+
+  .tableCell {
+    padding: 10px;
+  }
+
+  .actionButton {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+  .tableHeader {
+    font-size: 20px;
+  }
+
+  .table {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .tableCell {
+    padding: 8px;
+  }
+
+  .actionButton {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+}
+
+/* Extra small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  .tableContainer {
+    padding: 10px;
+  }
+
+  .tableHeader {
+    font-size: 18px;
+  }
+
+  .table {
+    font-size: 12px;
+  }
+
+  .tableCell {
+    padding: 6px;
+  }
+
+  .actionButton {
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+}
+
+/* Action button styling */
+.actionButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #007bff; /* Default blue color */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 8px;
+}
+
+.actionButton:hover {
+  background-color: #0056b3; /* Blue hover effect */
+}
+
+.actionButton:active {
+  transform: scale(0.98);
+}
+
+/* Delete Button Styling */
+.deleteButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #f44336; /* Red background */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.deleteButton:active {
+  transform: scale(0.98);
+}

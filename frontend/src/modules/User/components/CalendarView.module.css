@@ -1,0 +1,83 @@
+.calendarContainer {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.navButton {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.7em 1.5em;
+  border-radius: 5px;
+}
+
+.navButton:hover {
+  background-color: #0056b3;
+}
+
+.monthYear {
+  font-size: 1.8em;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.7em;
+}
+
+.dayName {
+  font-weight: bold;
+  text-align: center;
+}
+
+.day {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  min-height: 80px;
+}
+
+.day:hover {
+  background-color: #f0f8ff;
+}
+
+.empty {
+  background-color: transparent;
+}
+
+.commsList {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0 0;
+  font-size: 0.8em;
+}
+
+.commDetails {
+  color: #555;
+}
+
+.selected {
+  border: 2px solid #007bff;
+}
+
+.overdue {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.today {
+  background-color: #fff3cd;
+  color: #856404;
+}

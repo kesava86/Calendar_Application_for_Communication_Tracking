@@ -1,0 +1,243 @@
+/* General Container */
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #e0e7ff, #d1d5db);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Full width on smaller screens */
+}
+
+/* Form Header */
+.formHeader {
+  font-size: 28px;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* General Form Styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Row */
+.formRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Label Styling */
+.label {
+  font-size: 16px;
+  color: #4b5563;
+  font-weight: 600;
+  flex: 0 0 30%;
+  text-align: left;
+}
+
+/* Input, Select, and Textarea Styling */
+.input,
+.select,
+.textarea {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+}
+
+/* Textarea Styling */
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Custom Checkbox Styling */
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  border-radius: 30px;
+  background-color: #d1d5db;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.checkbox::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: white;
+  transition: left 0.3s ease;
+}
+
+.checkbox.checked {
+  background-color: #4caf50;
+}
+
+.checkbox.checked::after {
+  left: 25px;
+}
+
+.checkboxText {
+  font-size: 16px;
+  color: #4b5563;
+}
+
+/* Success and Error Messages */
+.successMessage,
+.errorMessage {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.successMessage {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.errorMessage {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Submit Button Styling */
+.button {
+  padding: 12px 24px;
+  background-color: #6159f3;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+.button:hover {
+  background-color: #4338ca;
+}
+
+/* Responsive Media Queries */
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  /* Adjust container width */
+  .container {
+    max-width: 90%; /* Allow the container to take up more width on small screens */
+    padding: 20px; /* Reduce padding */
+  }
+
+  /* Stack form rows vertically for smaller screens */
+  .formRow {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  /* Input fields take full width */
+  .input,
+  .select,
+  .textarea {
+    width: 100%;
+  }
+
+  /* Form header font size adjustment */
+  .formHeader {
+    font-size: 24px; /* Smaller header size for mobile */
+  }
+
+  /* Adjust button size for smaller screens */
+  .button {
+    width: 90%; /* Full width button */
+    font-size: 16px; /* Smaller font size */
+  }
+
+  .cancelButton {
+    width: 90%; /* Full width cancel button */
+    font-size: 16px; /* Smaller font size */
+  }
+}
+
+/* For screens smaller than 480px */
+@media screen and (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .formHeader {
+    font-size: 22px; /* Smaller header font */
+  }
+
+  .button,
+  .cancelButton {
+    width: 100%; /* Full width for both buttons */
+    font-size: 16px; /* Smaller font size for the buttons */
+  }
+
+  .label {
+    font-size: 14px; /* Smaller label font */
+  }
+
+  .input,
+  .select,
+  .textarea {
+    font-size: 14px; /* Smaller font for inputs */
+  }
+}
+
+.cancelButton {
+  background-color: #f44336; /* Red background */
+  margin-left: 20px; /* Spacing from other buttons */
+  padding: 12px 24px;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancelButton:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.cancelButton:active {
+  background-color: #b71c1c; /* Even darker red on click */
+}
+
+.cancelButton:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: 0 0 5px rgba(244, 67, 54, 0.75); /* Add focus shadow */
+}

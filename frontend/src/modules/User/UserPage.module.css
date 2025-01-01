@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+}
+
+/* User Page Layout */
+.userPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.userHeader {
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  background-color: #1a73e8;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+
+.navButton {
+  background-color: #ffffff;
+  color: #1a73e8;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navButton:hover {
+  background-color: #e1ecf4;
+}
+
+.notifications {
+  position: relative;
+}
+
+.notificationCount {
+  background-color: #ff5252;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+.content {
+  padding: 20px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Dashboard Styles */
+.communicationsTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.communicationsTable th,
+.communicationsTable td {
+  padding: 15px;
+  text-align: left;
+}
+
+.communicationsTable th {
+  background-color: #f9fafc;
+  color: #333;
+  font-size: 14px;
+}
+
+.communicationsTable tr:nth-child(even) {
+  background-color: #f4f7fc;
+}
+
+.addButton {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.addButton:hover {
+  background-color: #0d5bbf;
+}
+
+/* Notifications Styles */
+.notificationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notificationItem {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notificationItem h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.notificationItem p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.markReadButton {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.markReadButton:hover {
+  background-color: #0d5bbf;
+}
+
+/* Calendar Styles */
+.calendar {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-cell {
+  background-color: #f9fafc;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-cell:hover {
+  background-color: #e1ecf4;
+  cursor: pointer;
+}
+
+.current-day {
+  background-color: #1a73e8;
+  color: #ffffff;
+  font-weight: bold;
+}

@@ -1,0 +1,29 @@
+.dashboard {
+    margin: 20px;
+  }
+  
+  .dashboard h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .dashboardTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .dashboardTable th,
+  .dashboardTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .redHighlight {
+    background-color: #ffe6e6;
+  }
+  
+  .yellowHighlight {
+    background-color: #fff5cc;
+  }
+  

@@ -1,0 +1,257 @@
+/* Main container styling for the form */
+.formContainer {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #e0e7ff, #d1d5db);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%; /* Make it 100% width for small screens */
+  box-sizing: border-box; /* Ensure padding is considered in the width calculation */
+}
+
+/* Header styling */
+.formHeader {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Form layout and spacing */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Form group styling (each input field) */
+.formGroup {
+  display: flex;
+  align-items: center; /* Align items horizontally */
+  justify-content: space-between; /* Add space between label and input */
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.formLabel {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 20px; /* Space between label and input field */
+  width: 200px; /* Fixed width to make sure the label stays aligned */
+}
+
+/* Input field styling */
+.formInput {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fafafa;
+  width: 100%; /* Allow the input to take up the remaining space */
+}
+
+/* Input field focus styling */
+.formInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* Textarea styling */
+.formTextArea {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  resize: vertical;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Ensure textarea takes up the full width */
+}
+
+/* Textarea focus styling */
+.formTextArea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* Placeholder styling */
+.formInput::placeholder, .formTextArea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Submit button styling */
+.submitButton {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+/* Submit button hover effect */
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+/* Submit button active effect */
+.submitButton:active {
+  transform: scale(0.98);
+}
+
+/* Cancel button styling */
+.cancelButton {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: #e50f0f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+/* Hover Effect for Cancel Button */
+.cancelButton:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Active (Pressed) Effect for Cancel Button */
+.cancelButton:active {
+  background-color: #b71c1c; /* Even darker red when clicked */
+  transform: scale(0.98); /* Slightly shrink to simulate pressing */
+}
+
+/* Focus State for Cancel Button */
+.cancelButton:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.5); /* Add a subtle red glow */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  /* Decrease the padding for larger tablets */
+  .formContainer {
+    padding: 30px;
+  }
+
+  .formHeader {
+    font-size: 32px;
+  }
+
+  .formInput, .formTextArea {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .submitButton {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .cancelButton {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .formLabel {
+    width: 150px; /* Slightly smaller label width */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust form container padding for tablets and smaller screens */
+  .formContainer {
+    padding: 20px;
+  }
+
+  /* Header font size adjustment */
+  .formHeader {
+    font-size: 28px;
+  }
+
+  /* Input and textarea font size adjustment */
+  .formInput, .formTextArea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Adjust button size for mobile */
+  .submitButton {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .cancelButton {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  /* Adjust form group layout */
+  .formGroup {
+    flex-direction: row; /* Stack label and input vertically on small screens */
+    align-items: stretch; /* Ensure they take up full width */
+  }
+
+  .formLabel {
+    margin-right: 0;
+    width: 100%; /* Remove fixed width */
+    margin-bottom: 10px; /* Add spacing between label and input */
+  }
+
+  .formInput {
+    width: 100%; /* Ensure the input stretches to fill the available space */
+  }
+
+  .formTextArea {
+    width: 100%; /* Ensure the textarea stretches to fill the available space */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce padding further for mobile */
+  .formContainer {
+    padding: 15px;
+  }
+
+  .formHeader {
+    font-size: 24px;
+  }
+
+  /* Smaller font size for inputs and textareas on mobile */
+  .formInput, .formTextArea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .submitButton {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .cancelButton {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .formGroup {
+    gap: 15px; /* Reduce gap for smaller screens */
+  }
+}
