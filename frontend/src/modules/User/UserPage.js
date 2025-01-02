@@ -21,17 +21,9 @@ function UserPage() {
     let todayCount = 0;
 
     data.forEach((item) => {
-      if (Array.isArray(item.lastCommunications)) {
-        overdue += item.lastCommunications.filter(
-          (comm) => new Date(comm.communicationDate) < new Date()
-        ).length;
-      }
-      if (item.nextDue) {
-        const dueDate = new Date(item.nextDue.communicationDate).toDateString();
-        if (dueDate === today) {
-          todayCount++;
-        }
-      }
+      const communicationDate = new Date(item.communicationDate);
+      if (communicationDate < new Date()) overdue++;
+      if (communicationDate.toDateString() === today) todayCount++;
     });
 
     setOverdueCount(overdue);
@@ -42,33 +34,32 @@ function UserPage() {
     setLoading(true);
     setError("");
     try {
-      const response = await axios.get("http://localhost:5000/api/communications");
+      const response = await axios.get("https://calendar-application-for-communication-a7y1.onrender.com/api/communications");
       if (response.data.success && Array.isArray(response.data.data)) {
         const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(today.getDate() + 1);
+        today.setHours(0, 0, 0, 0); // Normalize today's date
 
-        const formattedData = response.data.data.map((item) => ({
-          ...item,
-          lastCommunications: item.lastCommunications
-            ? item.lastCommunications
-                .sort((a, b) => new Date(b.communicationDate) - new Date(a.communicationDate))
-                .slice(0, 5)
-                .map((comm) => ({
-                  communicationType: comm.communicationType,
-                  communicationDate: new Date(comm.communicationDate).toLocaleDateString(),
-                }))
-            : [],
-          nextDue: item.lastCommunications
-            ? item.lastCommunications.find((comm) => {
-                const commDate = new Date(comm.communicationDate);
-                return (
-                  commDate.toDateString() === today.toDateString() ||
-                  commDate.toDateString() === tomorrow.toDateString()
-                );
-              })
-            : null,
-        }));
+        const formattedData = response.data.data.map((item) => {
+          const communicationDate = new Date(item.communicationDate);
+          const isOverdue = communicationDate < today;
+
+          return {
+            ...item,
+            communicationDate: communicationDate.toLocaleDateString(),
+            lastCommunications: isOverdue
+              ? [{
+                communicationType: item.communicationType,
+                communicationDate: communicationDate.toLocaleDateString(),
+              }]
+              : [],
+            nextDue: !isOverdue
+              ? {
+                communicationType: item.communicationType,
+                communicationDate: communicationDate.toLocaleDateString(),
+              }
+              : null,
+          };
+        });
 
         setCommunications(formattedData);
         calculateNotificationCounts(formattedData);
@@ -132,7 +123,7 @@ function UserPage() {
                 <tr>
                   <th>Select</th>
                   <th>Company</th>
-                  <th>Last Communications</th>
+                  <th>Last Communication</th>
                   <th>Next Due</th>
                 </tr>
               </thead>
@@ -145,19 +136,15 @@ function UserPage() {
                       </td>
                       <td>
                         <strong>{item.companyName}</strong>
-                        <br />
-                        {item.location}
                       </td>
                       <td>
-                        {item.lastCommunications.length > 0 ? (
-                          item.lastCommunications.map((comm, idx) => (
+                        {item.lastCommunications.length > 0
+                          ? item.lastCommunications.map((comm, idx) => (
                             <p key={idx}>
                               {comm.communicationType} - {comm.communicationDate}
                             </p>
                           ))
-                        ) : (
-                          "No communications available"
-                        )}
+                          : "No communications available"}
                       </td>
                       <td>
                         {item.nextDue ? (
@@ -183,7 +170,9 @@ function UserPage() {
         )}
 
         {currentView === "calendar" && <CalendarView />}
-        {currentView === "notifications" && <Notification overdueCount={overdueCount} todayCount={todayCount} />}
+        {currentView === "notifications" && (
+          <Notification overdueCount={overdueCount} todayCount={todayCount} />
+        )}
         {isModalOpen && (
           <CommunicationModal
             onCancel={() => setIsModalOpen(false)}

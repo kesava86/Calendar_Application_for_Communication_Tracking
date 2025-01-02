@@ -9,7 +9,7 @@ const Notification = ({ refresh }) => {
   useEffect(() => {
     const fetchCommunications = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/communications");
+        const response = await axios.get("https://calendar-application-for-communication-a7y1.onrender.com/api/communications");
         const communications = response.data.data;
 
         if (!Array.isArray(communications)) {

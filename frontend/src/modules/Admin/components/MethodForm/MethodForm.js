@@ -50,7 +50,7 @@ const MethodForm = ({ method, onMethodAdded, onFormSubmit, onCancel }) => {
     }
 
     try {
-      const url = method ? `http://localhost:5000/api/methods/${method._id}` : "http://localhost:5000/api/methods";
+      const url = method ? `https://calendar-application-for-communication-a7y1.onrender.com/api/methods/${method._id}` : "http://localhost:5000/api/methods";
       const methodRequest = method ? axios.put(url, methodData) : axios.post(url, methodData);
       const response = await methodRequest;
 

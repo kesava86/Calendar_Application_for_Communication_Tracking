@@ -14,7 +14,7 @@ const CompaniesTable = () => {
   const fetchCompanies = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/companies");
+      const response = await axios.get("https://calendar-application-for-communication-a7y1.onrender.com/api/companies");
       if (Array.isArray(response.data.data)) {
         setCompanies(response.data.data);
       } else {
@@ -40,7 +40,7 @@ const CompaniesTable = () => {
   // Handle Delete Button Click
   const handleDeleteClick = async (companyId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/companies/${companyId}`);
+      await axios.delete(`https://calendar-application-for-communication-a7y1.onrender.com/api/companies/${companyId}`);
       setCompanies((prevCompanies) =>
         prevCompanies.filter((company) => company._id !== companyId)
       );
@@ -57,7 +57,7 @@ const CompaniesTable = () => {
   const handleCompanyUpdated = async (updatedCompany) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/companies/${updatedCompany._id}`,
+        `https://calendar-application-for-communication-a7y1.onrender.com/api/companies/${updatedCompany._id}`,
         updatedCompany
       );
       setCompanies((prevCompanies) =>

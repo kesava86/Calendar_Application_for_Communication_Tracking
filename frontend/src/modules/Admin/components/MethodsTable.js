@@ -19,7 +19,7 @@ const MethodsTable = () => {
   const fetchMethods = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/methods");
+      const response = await axios.get("https://calendar-application-for-communication-a7y1.onrender.com/api/methods");
       if (response.data.success && Array.isArray(response.data.data)) {
         setMethods(response.data.data);
       } else {
@@ -70,7 +70,7 @@ const MethodsTable = () => {
   // Handle delete action
   const handleDelete = async (methodId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/methods/${methodId}`);
+      await axios.delete(`https://calendar-application-for-communication-a7y1.onrender.com/api/methods/${methodId}`);
       setMethods((prevMethods) =>
         prevMethods.filter((method) => method._id !== methodId)
       );
