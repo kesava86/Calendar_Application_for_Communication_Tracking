@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+app.use(cors({ origin: "https://calendar-application-for-communication-tracking-h825-pm1r72sma.vercel.app" }));
+
 
 const app = express();
 
